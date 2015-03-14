@@ -1,2 +1,3 @@
 *.sqlite3
 ve
+api/static/admin

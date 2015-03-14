@@ -1,3 +1,5 @@
+from collections import OrderedDict
+
 from django.shortcuts import get_object_or_404
 
 from rest_framework.authentication import SessionAuthentication
@@ -24,9 +26,10 @@ class ArticlesEndpoint(APIView):
         queryset = Article.objects.all()
         paginator = PageNumberPagination()
         paginator.paginate_queryset(queryset, request)
+
         articles_serializer = ArticleSerializer(paginator.page, many=True)
-        return Response(paginator.get_paginated_response(
-            articles_serializer.data))
+        return paginator.get_paginated_response(
+            articles_serializer.data)
 
 
 class ArticleEndpoint(APIView):
