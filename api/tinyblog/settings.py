@@ -80,7 +80,6 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.7/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
@@ -90,3 +89,14 @@ STATIC_URL = '/static/'
 REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
+
+if DEBUG:
+    UI_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'ui')
+
+    TEMPLATE_DIRS = (
+        UI_ROOT,
+    )
+
+    STATICFILES_DIRS = (
+        UI_ROOT,
+    )
