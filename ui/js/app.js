@@ -1,6 +1,6 @@
 angular.module('TinyBlogApp', [
     'TinyBlogApp.services',
-    'TInyBlogApp.controllers',
+    'TinyBlogApp.controllers',
     'ngRoute'
 ]).
 config(['$routeProvider', function($routeProvider) {
@@ -8,12 +8,12 @@ config(['$routeProvider', function($routeProvider) {
 
     $routeProvider.
         when("/articles", {
-            templateUrl: "partials/articles.html",
-            controller: "tinyBlogController"
+            templateUrl: "static/partials/articles.html",
+            controller: "articlesController"
         }).
         when("/article/:id", {
-            templateUrl: "partials/article.html",
-            controller: "tinyBlogController"
+            templateUrl: "static/partials/article.html",
+            controller: "articleController"
         }).
         otherwise({redirectTo: '/articles'});
 }]);

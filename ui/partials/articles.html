@@ -1,8 +1,12 @@
-<ul>
-    <li ng-repeat="article in articles">
-        <h2>{{ article.title }}</h2>
-        <div class="article-summary">
-            <p>{{ article.content }}</p>
-        </div>
-    </li>
-</ul>
+<section id="main">
+    <div class="main-content">
+        <ul>
+            <li ng-repeat="article in articles">
+                <h2><a href="./#/article/{{ article.id }}">{{ article.title }}</a></h2>
+                <div class="article-summary">
+                    <p>{{ article.content }}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>

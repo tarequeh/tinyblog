@@ -2,7 +2,7 @@
 
 angular.module('TinyBlogApp.controllers', []).
     /* Articles controller */
-    controller('tinyBlogController', function($scope, tinyBlogAPIservice) {
+    controller('articlesController', function($scope, tinyBlogAPIservice) {
         $scope.count = null;
         $scope.next = null;
         $scope.previous = null;
@@ -17,7 +17,7 @@ angular.module('TinyBlogApp.controllers', []).
     }).
 
     /* Article controller */
-    controller('tinyBlogController', function($scope, $routeParams, tinyBlogAPIservice) {
+    controller('articleController', function($scope, $routeParams, tinyBlogAPIservice) {
         $scope.id = $routeParams.id;
         $scope.article = null;
 
