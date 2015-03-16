@@ -8,5 +8,11 @@
                 </div>
             </li>
         </ul>
+        <div ng-if="previous">
+            <a href="./#/articles/{{ previous }}">Previous</a>
+        </div>
+        <div ng-if="next">
+            <a href="./#/articles/{{ next }}">Next</a>
+        </div>
     </div>
 </section>

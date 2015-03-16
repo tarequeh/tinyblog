@@ -2,13 +2,16 @@
 
 angular.module('TinyBlogApp.controllers', []).
     /* Articles controller */
-    controller('articlesController', function($scope, tinyBlogAPIservice) {
+    controller('articlesController', function($scope, $routeParams, tinyBlogAPIservice) {
+        $scope.page = $routeParams.page || 1;
         $scope.count = null;
         $scope.next = null;
         $scope.previous = null;
         $scope.articles = [];
 
-        tinyBlogAPIservice.getArticles().success(function (response) {
+        tinyBlogAPIservice.getArticles($scope.page).success(function (response) {
+            var pageNumberTokens;
+
             $scope.count = response.count;
             $scope.next = response.next;
             $scope.previous = response.previous;

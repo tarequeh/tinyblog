@@ -80,15 +80,11 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
-
-# django REST framework
-
-REST_FRAMEWORK = {
-    'PAGE_SIZE': 10
-}
+# Template/Static mangling to allow debug mode running
 
 if DEBUG:
     UI_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'ui')

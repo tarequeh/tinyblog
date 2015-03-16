@@ -7,7 +7,7 @@ config(['$routeProvider', function($routeProvider) {
     'use strict';
 
     $routeProvider.
-        when("/articles", {
+        when("/articles/:page?", {
             templateUrl: "static/partials/articles.html",
             controller: "articlesController"
         }).
